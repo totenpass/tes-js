@@ -1,0 +1,9 @@
+!dist
+.github
+.vscode
+*.tgz
+*.zip
+coverage
+jest.config.js
+rollup.config.js
+src

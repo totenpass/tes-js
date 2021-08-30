@@ -1,0 +1,64 @@
+{
+  "name": "@totenpass/tes",
+  "version": "1.0.0",
+  "description": "JavaScript implementation of the Total Encryption Standard Specification",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint -c ./.eslintrc.json src/**/*.ts --fix",
+    "build": "rimraf dist && rollup -c ./rollup.config.js",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,js}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/totenpass/tes-js.git"
+  },
+  "keywords": [
+    "totenpass",
+    "encryption",
+    "encryption library"
+  ],
+  "author": {
+    "name": "Totenpass Inc.",
+    "url": "https://totenpass.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/totenpass/tes-js/issues"
+  },
+  "homepage": "https://github.com/totenpass/tes-js#readme",
+  "dependencies": {
+    "libsodium-wrappers": "^0.7.9",
+    "tiinvo": "^2.20.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/libsodium-wrappers": "^0.7.9",
+    "@types/node": "^16.7.1",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.3.5"
+  }
+}
